@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>All Resources | Uni Pilot</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+<style id="all-resources-page-style">
+:root{--green:#0b5d3b;--dark-green:#063b26;--light-green:#eaf6ef;--yellow:#f5c518;--light-yellow:#fff8dc;--white:#fff;--background:#f7faf8;--text:#17221c;--muted:#6d7a72;--border:#dfe8e2}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at top left,rgba(11,93,59,.06),transparent 34%),var(--background);color:var(--text);font-family:"Manrope",sans-serif}
+.header{background:rgba(255,255,255,.94);border-bottom:1px solid var(--border);box-shadow:0 5px 20px rgba(6,59,38,.07)}
+.navbar{width:min(1200px,calc(100% - 40px));min-height:76px;margin:0 auto}
+.brand{color:var(--dark-green);font-weight:800;text-decoration:none}
+.desktop-nav a{color:var(--text);font-weight:700;text-decoration:none;transition:color .2s ease,background .2s ease}
+.desktop-nav a:hover{color:var(--green)}
+.nav-actions .icon-btn,.nav-actions .menu-btn{border:1px solid var(--border);border-radius:12px;background:var(--white);color:var(--green);transition:background .2s ease,transform .2s ease,border-color .2s ease}
+.nav-actions .icon-btn:hover,.nav-actions .menu-btn:hover{background:var(--light-green);border-color:var(--green);transform:translateY(-1px)}
+.mobile-menu{background:var(--white);border:1px solid var(--border);border-radius:16px;box-shadow:0 12px 28px rgba(6,59,38,.1)}
+.mobile-menu a{color:var(--text);font-weight:700;text-decoration:none;border-radius:10px}
+.mobile-menu a:hover{background:var(--light-green);color:var(--green)}
+.all-resource-hero{position:relative;overflow:hidden;padding:56px 20px 44px;background:linear-gradient(135deg,rgba(234,246,239,.96),rgba(255,255,255,.98));border-bottom:1px solid var(--border)}
+.all-resource-hero:after{content:"";position:absolute;width:260px;height:260px;right:-110px;top:-130px;border-radius:50%;background:rgba(245,197,24,.12);pointer-events:none}
+.section-heading{position:relative;z-index:1;max-width:780px;margin:0 auto 28px;text-align:center}
+.intro-label,.resource-small-label{color:var(--green);font-size:.74rem;font-weight:800;letter-spacing:.14em}
+.section-heading h1{margin:10px 0 12px;color:var(--dark-green);font-size:clamp(2.1rem,5vw,3.5rem);line-height:1.08;letter-spacing:-.035em}
+.section-heading p{max-width:680px;margin:0 auto;color:var(--muted);line-height:1.75}
+.resource-search-box{position:relative;z-index:2;width:min(850px,100%);margin:0 auto 22px;display:flex;gap:10px;padding:8px;border:1px solid var(--border);border-radius:18px;background:rgba(255,255,255,.92);box-shadow:0 12px 28px rgba(6,59,38,.08)}
+.search-input-wrapper{position:relative;flex:1;min-width:0;display:flex;align-items:center}
+.search-symbol{position:absolute;left:16px;color:var(--green);font-size:1rem}
+.search-input-wrapper input{width:100%;height:50px;padding:0 44px;border:0;outline:none;border-radius:12px;background:var(--background);color:var(--text);font:inherit}
+.search-input-wrapper input:focus{background:var(--white);box-shadow:inset 0 0 0 2px rgba(11,93,59,.14)}
+.clear-search{position:absolute;right:8px;width:34px;height:34px;border:0;border-radius:9px;background:transparent;color:var(--muted);cursor:pointer;font-size:1.25rem}
+.clear-search:hover{background:var(--light-green);color:var(--green)}
+.resource-search-btn,.resource-view-btn,.secondary-btn{border:0;border-radius:12px;background:var(--green);color:var(--white);font:inherit;font-weight:800;cursor:pointer;transition:background .2s ease,transform .2s ease}
+.resource-search-btn{min-width:110px;padding:0 20px}
+.resource-search-btn:hover,.resource-view-btn:hover,.secondary-btn:hover{background:var(--dark-green);transform:translateY(-1px)}
+.resource-filter-row{position:relative;z-index:2;display:flex;justify-content:center;flex-wrap:wrap;gap:9px}
+.resource-filter{border:1px solid var(--border);border-radius:999px;padding:9px 14px;background:var(--white);color:var(--muted);font:inherit;font-size:.78rem;font-weight:800;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease}
+.resource-filter:hover{color:var(--green);border-color:var(--green);transform:translateY(-1px)}
+.resource-filter.active{background:var(--green);border-color:var(--green);color:var(--white)}
+.resource-results-section{padding:34px 20px 50px;background:var(--white)}
+.resource-results-top{width:min(1100px,100%);margin:0 auto 24px;display:flex;align-items:end;justify-content:space-between;gap:20px}
+.resource-results-top h2{margin:7px 0 0;color:var(--dark-green);font-size:1.5rem}
+.resource-count{padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:var(--light-green);color:var(--green);font-size:.78rem;font-weight:800}
+.all-resource-grid{width:min(1100px,100%);margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.all-resource-card{min-width:0;display:flex;flex-direction:column;padding:22px;border:1px solid var(--border);border-radius:20px;background:var(--white);box-shadow:0 6px 20px rgba(6,59,38,.05);transition:transform .22s ease,background .22s ease,border-color .22s ease,box-shadow .22s ease}
+.all-resource-card:hover{transform:translateY(-5px);background:var(--light-green);border-color:rgba(11,93,59,.3);box-shadow:0 14px 28px rgba(6,59,38,.1)}
+.all-resource-icon{width:54px;height:54px;display:grid;place-items:center;margin-bottom:18px;border-radius:15px;background:var(--light-green);font-size:1.45rem}
+.all-resource-content{display:flex;flex:1;flex-direction:column}
+.resource-card-top{margin-bottom:10px}
+.resource-tag{display:inline-flex;align-items:center;min-height:26px;padding:5px 9px;border-radius:999px;background:var(--light-yellow);color:#735c00;font-size:.62rem;font-weight:800;letter-spacing:.06em}
+.all-resource-content h3{margin:0 0 9px;color:var(--dark-green);font-size:1.04rem;line-height:1.4}
+.all-resource-content p{margin:0 0 18px;color:var(--muted);font-size:.86rem;line-height:1.65}
+.resource-meta{display:grid;gap:7px;margin-top:auto;margin-bottom:17px;color:var(--muted);font-size:.73rem;line-height:1.45}
+.resource-view-btn{width:100%;min-height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 14px}
+.resource-empty{width:min(700px,100%);margin:25px auto 0;padding:45px 20px;text-align:center;border:1px dashed var(--border);border-radius:20px;background:var(--background)}
+.resource-empty-icon{font-size:2.2rem}
+.resource-empty h3{margin:10px 0 6px;color:var(--dark-green)}
+.resource-empty p{margin:0 0 18px;color:var(--muted)}
+.footer{background:var(--dark-green)}
+.footer-brand .brand{color:var(--white)}
+.footer-links a{color:rgba(255,255,255,.82)}
+.footer-links a:hover{color:var(--yellow)}
+.footer-bottom{border-top-color:rgba(255,255,255,.15);color:rgba(255,255,255,.65)}
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:950px){.all-resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.navbar{width:calc(100% - 24px)}.all-resource-hero{padding:40px 16px 32px}.resource-search-box{flex-direction:column;padding:7px}.resource-search-btn{min-height:48px}.resource-results-section{padding:28px 16px 40px}.resource-results-top{align-items:flex-start;flex-direction:column}.all-resource-grid{grid-template-columns:1fr}.all-resource-card{border-radius:17px}}
+
+/* ===== INDEX FOOTER — same structure, modern finish ===== */
+.footer {
+  position: relative;
+  margin-top: 0;
+  background:
+    linear-gradient(180deg, rgba(6,59,38,.98), rgba(4,48,31,1));
+  color: rgba(255,255,255,.84);
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  top: -300px;
+  right: -120px;
+  border: 1px solid rgba(245,197,24,.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  bottom: -190px;
+  left: -90px;
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.footer-container {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 54px 0 42px;
+  display: grid;
+  grid-template-columns: minmax(240px, 1.15fr) minmax(320px, .85fr);
+  gap: 70px;
+  align-items: start;
+}
+
+.footer-brand .brand {
+  display: inline-flex;
+  align-items: center;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.footer-brand p {
+  max-width: 300px;
+  margin: 13px 0 0;
+  color: rgba(255,255,255,.64);
+  font-size: .88rem;
+  line-height: 1.7;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 44px;
+}
+
+.footer-column {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.footer-column h4 {
+  margin: 0 0 8px;
+  color: var(--yellow);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.footer-column a {
+  width: fit-content;
+  color: rgba(255,255,255,.72);
+  text-decoration: none;
+  font-size: .86rem;
+  line-height: 1.5;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.footer-column a:hover {
+  color: var(--white);
+  transform: translateX(3px);
+}
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 18px 0 22px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: rgba(255,255,255,.5);
+  font-size: .75rem;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .footer-container {
+    width: min(100% - 32px, 560px);
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding: 42px 0 34px;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 28px;
+  }
+
+  .footer-bottom {
+    width: min(100% - 32px, 560px);
+  }
+}
+
+@media (max-width: 430px) {
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+
+
+  <link rel="stylesheet" href="site-navigation.css">
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+  <nav class="navbar">
+
+    <a href="index.html" class="brand">
+      🎓 Uni Pilot
+    </a>
+
+
+    <div class="desktop-nav">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="resources.html">
+        Resources
+      </a>
+
+      <a href="guide.html">
+        Student Guide
+      </a>
+
+      <a href="updates.html">
+        Updates
+      </a>
+
+      <a href="tools.html">
+        Tools
+      </a>
+
+    </div>
+
+
+    <div class="nav-actions">
+
+      <a
+        href="search.html"
+        class="icon-btn"
+        aria-label="Search Uni Pilot"
+        title="Search Uni Pilot"
+        style="display:grid;place-items:center;text-decoration:none;">
+        🔍
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open Menu"
+        type="button">
+        ☰
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <div class="mobile-menu" id="navLinks">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="resources.html">
+      Resources
+    </a>
+
+    <a href="guide.html">
+      Student Guide
+    </a>
+
+    <a href="updates.html">
+      Updates
+    </a>
+
+    <a href="tools.html">
+      Tools
+    </a>
+
+  </div>
+
+</header>
+
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+
+
+<main>
+
+
+  <!-- HERO -->
+
+  <section class="section all-resource-hero">
+
+    <div class="section-heading">
+
+      <span class="intro-label">
+        UNI PILOT LIBRARY
+      </span>
+
+      <h1>
+        All Academic Resources
+      </h1>
+
+      <p>
+        Search and explore academic resources from different departments and faculties.
+      </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <form
+      class="resource-search-box"
+      id="resourceSearchForm"
+      role="search"
+      aria-label="Search academic resources">
+
+      <div class="search-input-wrapper">
+
+        <span class="search-symbol">
+          🔍
+        </span>
+
+        <label
+          for="resourceSearch"
+          class="visually-hidden">
+          Search academic resources
+        </label>
+
+        <input
+          type="search"
+          id="resourceSearch"
+          placeholder="Search resources, departments, courses..."
+          autocomplete="off">
+
+        <button
+          type="button"
+          id="clearResourceSearch"
+          class="clear-search"
+          aria-label="Clear search">
+          ×
+        </button>
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="resource-search-btn">
+        Search
+      </button>
+
+    </form>
+
+
+    <!-- FILTERS -->
+
+    <div class="resource-filter-row">
+
+      <button
+        class="resource-filter active"
+        data-filter="all">
+        All Resources
+      </button>
+
+      <button
+        class="resource-filter"
+        data-filter="course">
+        Course Materials
+      </button>
+
+      <button
+        class="resource-filter"
+        data-filter="notes">
+        Lecture Notes
+      </button>
+
+      <button
+        class="resource-filter"
+        data-filter="questions">
+        Past Questions
+      </button>
+
+      <button
+        class="resource-filter"
+        data-filter="guide">
+        Study Guides
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- RESOURCE COUNT -->
+
+  <section class="section resource-results-section">
+
+    <div class="resource-results-top">
+
+      <div>
+
+        <span class="resource-small-label">
+          RESOURCE LIBRARY
+        </span>
+
+        <h2 id="resultsTitle">
+          All Resources
+        </h2>
+
+      </div>
+
+      <span
+        class="resource-count"
+        id="resourceCount">
+        12 resources
+      </span>
+
+    </div>
+
+
+    <!-- RESOURCE GRID -->
+
+    <div
+      class="all-resource-grid"
+      id="allResourceGrid">
+    </div>
+
+
+    <!-- NO RESULTS -->
+
+    <div
+      class="resource-empty"
+      id="resourceEmpty"
+      style="display: none;">
+
+      <div class="resource-empty-icon">
+        🔎
+      </div>
+
+      <h3>
+        No resources found
+      </h3>
+
+      <p>
+        Try a different search term or choose another category.
+      </p>
+
+      <button
+        type="button"
+        id="resetSearch"
+        class="secondary-btn">
+        Show All Resources
+      </button>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <a href="index.html" class="brand">🎓 Uni Pilot</a>
+      <p>Your campus. Your resources. Your guide.</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-column">
+        <h4>Platform</h4>
+        <a href="resources.html">Resources</a>
+        <a href="guide.html">Student Guide</a>
+        <a href="updates.html">Updates</a>
+        <a href="tools.html">Student Tools</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Information</h4>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Uni Pilot. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+
+/* =========================================
+   RESOURCE DATABASE
+========================================= */
+
+const resources = [
+
+  {
+    title: "Course Materials",
+    description: "General course materials and academic resources for students.",
+    department: "All Departments",
+    faculty: "All Faculties",
+    type: "course",
+    icon: "📚"
+  },
+
+  {
+    title: "Lecture Notes",
+    description: "Lecture notes and important topics to help students revise.",
+    department: "All Departments",
+    faculty: "All Faculties",
+    type: "notes",
+    icon: "📝"
+  },
+
+  {
+    title: "Past Examination Questions",
+    description: "Past questions to help students prepare for examinations.",
+    department: "All Departments",
+    faculty: "All Faculties",
+    type: "questions",
+    icon: "📖"
+  },
+
+  {
+    title: "Student Study Guide",
+    description: "Helpful study strategies and academic preparation tips.",
+    department: "All Departments",
+    faculty: "All Faculties",
+    type: "guide",
+    icon: "🎯"
+  },
+
+  {
+    title: "Computer Science Course Materials",
+    description: "Study materials for Computer Science students.",
+    department: "Computer Science",
+    faculty: "Faculty of Computing",
+    type: "course",
+    icon: "💻"
+  },
+
+  {
+    title: "Software Engineering Lecture Notes",
+    description: "Lecture notes and revision materials for Software Engineering.",
+    department: "Software Engineering",
+    faculty: "Faculty of Computing",
+    type: "notes",
+    icon: "💻"
+  },
+
+  {
+    title: "Cyber Security Past Questions",
+    description: "Past examination questions for Cyber Security students.",
+    department: "Cyber Security",
+    faculty: "Faculty of Computing",
+    type: "questions",
+    icon: "🔐"
+  },
+
+  {
+    title: "Agricultural Economics Materials",
+    description: "Course materials for Agricultural Economics students.",
+    department: "Agricultural Economics",
+    faculty: "Faculty of Agriculture",
+    type: "course",
+    icon: "🌱"
+  },
+
+  {
+    title: "Nursing Science Study Guide",
+    description: "Study resources and academic preparation guide for Nursing Science.",
+    department: "Nursing Science",
+    faculty: "Faculty of Allied Health Sciences",
+    type: "guide",
+    icon: "🩺"
+  },
+
+  {
+    title: "Medical Laboratory Science Notes",
+    description: "Lecture and revision notes for Medical Laboratory Science.",
+    department: "Medical Laboratory Science",
+    faculty: "Faculty of Allied Health Sciences",
+    type: "notes",
+    icon: "🔬"
+  },
+
+  {
+    title: "Mass Communication Materials",
+    description: "Academic resources for Mass Communication students.",
+    department: "Mass Communication",
+    faculty: "Faculty of Social Sciences",
+    type: "course",
+    icon: "🎙️"
+  },
+
+  {
+    title: "Law Past Questions",
+    description: "Past examination questions for Law students.",
+    department: "Law",
+    faculty: "Faculty of Law",
+    type: "questions",
+    icon: "⚖️"
+  }
+
+];
+
+
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+const resourceGrid =
+  document.getElementById("allResourceGrid");
+
+const searchInput =
+  document.getElementById("resourceSearch");
+
+const searchForm =
+  document.getElementById("resourceSearchForm");
+
+const clearButton =
+  document.getElementById("clearResourceSearch");
+
+const resourceCount =
+  document.getElementById("resourceCount");
+
+const emptyState =
+  document.getElementById("resourceEmpty");
+
+const resetButton =
+  document.getElementById("resetSearch");
+
+const filterButtons =
+  document.querySelectorAll(".resource-filter");
+
+
+
+let activeFilter = "all";
+
+
+
+/* =========================================
+   DISPLAY RESOURCES
+========================================= */
+
+function displayResources(list) {
+
+  resourceGrid.innerHTML = "";
+
+
+  if (list.length === 0) {
+
+    emptyState.style.display = "block";
+
+    resourceCount.textContent =
+      "0 resources";
+
+    return;
+
+  }
+
+
+  emptyState.style.display = "none";
+
+
+  resourceCount.textContent =
+    `${list.length} resource${list.length === 1 ? "" : "s"}`;
+
+
+  list.forEach(resource => {
+
+    const card =
+      document.createElement("article");
+
+    card.className =
+      "all-resource-card";
+
+
+    card.innerHTML = `
+
+      <div class="all-resource-icon">
+        ${resource.icon}
+      </div>
+
+      <div class="all-resource-content">
+
+        <div class="resource-card-top">
+
+          <span class="resource-tag">
+            ${getTypeName(resource.type)}
+          </span>
+
+        </div>
+
+        <h3>
+          ${resource.title}
+        </h3>
+
+        <p>
+          ${resource.description}
+        </p>
+
+        <div class="resource-meta">
+
+          <span>
+            🏫 ${resource.faculty}
+          </span>
+
+          <span>
+            🎓 ${resource.department}
+          </span>
+
+        </div>
+
+        <button
+          type="button"
+          class="resource-view-btn"
+          onclick="showResourceMessage('${escapeQuotes(resource.title)}')">
+
+          View Resource
+          <span>→</span>
+
+        </button>
+
+      </div>
+
+    `;
+
+
+    resourceGrid.appendChild(card);
+
+  });
+
+}
+
+
+
+/* =========================================
+   RESOURCE TYPE NAME
+========================================= */
+
+function getTypeName(type) {
+
+  const names = {
+
+    course: "COURSE MATERIALS",
+
+    notes: "LECTURE NOTES",
+
+    questions: "PAST QUESTIONS",
+
+    guide: "STUDY GUIDE"
+
+  };
+
+  return names[type] || "RESOURCE";
+
+}
+
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+function searchResources() {
+
+  const searchTerm =
+    searchInput.value
+      .trim()
+      .toLowerCase();
+
+
+  const filtered =
+    resources.filter(resource => {
+
+      const matchesSearch =
+        !searchTerm ||
+
+        resource.title
+          .toLowerCase()
+          .includes(searchTerm) ||
+
+        resource.description
+          .toLowerCase()
+          .includes(searchTerm) ||
+
+        resource.department
+          .toLowerCase()
+          .includes(searchTerm) ||
+
+        resource.faculty
+          .toLowerCase()
+          .includes(searchTerm);
+
+
+      const matchesFilter =
+        activeFilter === "all" ||
+        resource.type === activeFilter;
+
+
+      return matchesSearch && matchesFilter;
+
+    });
+
+
+  displayResources(filtered);
+
+}
+
+
+
+/* =========================================
+   FILTER BUTTONS
+========================================= */
+
+filterButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    filterButtons.forEach(btn =>
+      btn.classList.remove("active")
+    );
+
+    button.classList.add("active");
+
+    activeFilter =
+      button.dataset.filter;
+
+    searchResources();
+
+  });
+
+});
+
+
+
+/* =========================================
+   SEARCH FORM
+========================================= */
+
+searchForm.addEventListener("submit", event => {
+
+  event.preventDefault();
+
+  searchResources();
+
+});
+
+
+
+/* LIVE SEARCH */
+
+searchInput.addEventListener(
+  "input",
+  searchResources
+);
+
+
+
+/* =========================================
+   CLEAR SEARCH
+========================================= */
+
+clearButton.addEventListener("click", () => {
+
+  searchInput.value = "";
+
+  searchResources();
+
+  searchInput.focus();
+
+});
+
+
+
+/* =========================================
+   RESET
+========================================= */
+
+resetButton.addEventListener("click", () => {
+
+  searchInput.value = "";
+
+  activeFilter = "all";
+
+
+  filterButtons.forEach(button => {
+
+    button.classList.remove("active");
+
+    if (button.dataset.filter === "all") {
+      button.classList.add("active");
+    }
+
+  });
+
+
+  searchResources();
+
+});
+
+
+
+/* =========================================
+   RESOURCE MESSAGE
+========================================= */
+
+function showResourceMessage(title) {
+
+  alert(
+    `"${title}" has been added to the Uni Pilot resource library.`
+  );
+
+}
+
+
+
+/* =========================================
+   SAFETY FOR RESOURCE TITLES
+========================================= */
+
+function escapeQuotes(text) {
+
+  return text
+    .replace(/\\/g, "\\\\")
+    .replace(/'/g, "\\'");
+
+}
+
+
+
+/* =========================================
+   INITIAL DISPLAY
+========================================= */
+
+displayResources(resources);
+
+
+</script>
+
+
+  <script src="site-navigation.js"></script>
+</body>
+</html>

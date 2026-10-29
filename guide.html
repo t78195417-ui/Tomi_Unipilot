@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Student Guide | AAUA Uni Pilot</title>
+
+
+  <!-- Google Font -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+
+<style id="uni-pilot-float-animations">
+/* Uni Pilot: smooth floating and scroll-reveal effects */
+@media (prefers-reduced-motion: no-preference) {
+  .up-reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .up-reveal.up-visible { opacity: 1; transform: translateY(0); }
+  .up-float { animation: upGentleFloat 5s ease-in-out infinite; }
+  .up-hover-float { transition: transform .28s ease, box-shadow .28s ease; }
+  .up-hover-float:hover { transform: translateY(-6px); }
+  @keyframes upGentleFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+}
+@media (prefers-reduced-motion: reduce) { .up-reveal { opacity: 1; transform: none; } }
+</style>
+
+  <link rel="stylesheet" href="site-navigation.css">
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header class="header">
+
+    <nav class="navbar">
+
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
+        <div class="brand-icon">
+          🎓
+        </div>
+
+        <span>
+          AAUA Uni Pilot
+        </span>
+
+      </a>
+
+
+      <!-- Desktop Navigation -->
+
+      <div class="desktop-nav">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="resources.html">
+          Resources
+        </a>
+
+        <a href="guide.html" class="active">
+          Student Guide
+        </a>
+
+        <a href="updates.html">
+          Updates
+        </a>
+
+        <a href="tools.html">
+          Tools
+        </a>
+
+      </div>
+
+
+      <!-- Navigation Actions -->
+
+      <div class="nav-actions">
+
+
+        <button
+          class="icon-btn"
+          aria-label="Search"
+          type="button"
+        >
+          🔍
+        </button>
+
+
+        <button
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Open Menu"
+          type="button"
+        >
+          ☰
+        </button>
+
+      </div>
+
+    </nav>
+
+
+    <!-- Mobile Menu -->
+
+    <div
+      class="mobile-menu"
+      id="navLinks"
+    >
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="resources.html">
+        Academic Resources
+      </a>
+
+      <a href="guide.html">
+        Student Guide
+      </a>
+
+      <a href="updates.html">
+        Campus Updates
+      </a>
+
+      <a href="opportunities.html">
+        Opportunities
+      </a>
+
+      <a href="tools.html">
+        Student Tools
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       MENU BACKGROUND OVERLAY
+  ========================== -->
+
+  <div
+    class="menu-overlay"
+    id="menuOverlay"
+  ></div>
+
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
+  <main>
+
+
+    <!-- =========================
+         STUDENT GUIDE
+    ========================== -->
+
+    <section class="section">
+
+      <div class="section-heading section-heading-left">
+
+        <span class="intro-label">
+          STUDENT GUIDE
+        </span>
+
+
+        <h2>
+          Navigate University Life
+        </h2>
+
+
+        <p>
+          Helpful information and guides to make everyday
+          university procedures easier.
+        </p>
+
+      </div>
+
+
+      <div class="guide-grid">
+
+
+        <!-- =========================
+             SCHOOL FEES
+        ========================== -->
+
+        <a
+          href="fees.html"
+          class="guide-card"
+        >
+
+          <span>
+            💳
+          </span>
+
+
+          <div>
+
+            <h3>
+              School Fees
+            </h3>
+
+
+            <p>
+              Payment procedures and important information
+              about school fees.
+            </p>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- =========================
+             COURSE REGISTRATION
+        ========================== -->
+
+        <a
+          href="reg.html"
+          class="guide-card"
+        >
+
+          <span>
+            📝
+          </span>
+
+
+          <div>
+
+            <h3>
+              Course Registration
+            </h3>
+
+
+            <p>
+              Learn how to register your courses properly
+              and avoid common mistakes.
+            </p>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- =========================
+             CHECK RESULTS
+        ========================== -->
+
+        <a
+          href="result.html"
+          class="guide-card"
+        >
+
+          <span>
+            📊
+          </span>
+
+
+          <div>
+
+            <h3>
+              Check Results
+            </h3>
+
+
+            <p>
+              Understand how to access and check your
+              academic results.
+            </p>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- =========================
+             SIWES / IT
+        ========================== -->
+
+        <a
+          href="it.html"
+          class="guide-card"
+        >
+
+          <span>
+            🎓
+          </span>
+
+
+          <div>
+
+            <h3>
+              SIWES / IT
+            </h3>
+
+
+            <p>
+              Information about industrial training,
+              placements, and student requirements.
+            </p>
+
+          </div>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <div class="footer-brand">
+
+        <a
+          href="index.html"
+          class="brand"
+        >
+
+          <span class="brand-icon">
+            🎓
+          </span>
+
+          <span>
+            Uni Pilot
+          </span>
+
+        </a>
+
+        <p>
+          Your campus. Your resources. Your guide.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <div class="footer-column">
+
+          <h4>
+            Platform
+          </h4>
+
+          <a href="resources.html">
+            Resources
+          </a>
+
+          <a href="guide.html">
+            Student Guide
+          </a>
+
+          <a href="updates.html">
+            Updates
+          </a>
+
+          <a href="tools.html">
+            Student Tools
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Information
+          </h4>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="privacy.html">
+            Privacy Policy
+          </a>
+
+          <a href="terms.html">
+            Terms of Use
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 Uni Pilot. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JavaScript -->
+
+  <script src="script.js"></script>
+
+
+
+<script id="uni-pilot-float-script">
+(() => {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealSelectors = 'main > section, main > article, .faculty-hero-content, .section-heading, .platform-intro, .tools-section, .resource-card, .tool-card, .update-card, .browse-all-card, .faculty-card, .department-card, .quick-info-card, .program-card, .contact-card';
+  const candidates = [...document.querySelectorAll(revealSelectors)];
+  const seen = new Set();
+  candidates.forEach((el, i) => {
+    if (seen.has(el) || el.closest('footer, nav, .desktop-nav, .mobile-nav, .theme-modal')) return;
+    seen.add(el);
+    el.classList.add('up-reveal');
+    if (el.matches('.resource-card, .tool-card, .update-card, .browse-all-card, .faculty-card, .department-card, .quick-info-card, .program-card, .contact-card')) el.classList.add('up-hover-float');
+    if (el.matches('.faculty-hero-content, .platform-intro')) el.classList.add('up-float');
+    el.style.transitionDelay = `${Math.min(i % 5, 4) * 70}ms`;
+  });
+  if (reduced || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.up-reveal').forEach(el => el.classList.add('up-visible'));
+    return;
+  }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('up-visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+  document.querySelectorAll('.up-reveal').forEach(el => observer.observe(el));
+})();
+</script>
+
+  <script src="site-navigation.js"></script>
+</body>
+
+</html>

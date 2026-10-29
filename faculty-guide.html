@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Faculty Guide | AAUA Uni Pilot</title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem("uniPilotTheme") || "system";
+    var dark = saved === "dark" || (saved === "system" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    document.documentElement.dataset.theme = dark ? "dark" : "light";
+    document.documentElement.dataset.themeChoice = ["light", "dark", "system"].includes(saved) ? saved : "system";
+  } catch (e) {
+    document.documentElement.dataset.theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+})();
+</script>
+
+
+  <!-- =========================
+       FACULTY PAGE ONLY CSS
+       DOES NOT EDIT style.css
+  ========================= -->
+
+  <style>
+
+    /* =========================
+       COMPACT FACULTY HERO
+    ========================= */
+
+    .faculty-hero {
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 85% 15%,
+          rgba(245, 197, 24, 0.18),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 10% 90%,
+          rgba(255, 255, 255, 0.06),
+          transparent 25%
+        ),
+        linear-gradient(
+          135deg,
+          #063b26 0%,
+          #0b5d3b 55%,
+          #08452d 100%
+        );
+
+      color: #ffffff;
+
+      /* Smaller height */
+      padding: 48px 22px 42px;
+
+      /* Rounded on every corner */
+      border-radius: 28px;
+
+      margin: 18px 22px 0;
+
+      isolation: isolate;
+
+      box-shadow:
+        0 12px 35px rgba(6, 59, 38, 0.12);
+    }
+
+
+    /* =========================
+       DECORATIVE BACKGROUND TEXT
+    ========================= */
+
+    .faculty-hero-bg {
+      position: absolute;
+
+      right: -25px;
+      bottom: -28px;
+
+      font-size: clamp(
+        5rem,
+        13vw,
+        10rem
+      );
+
+      font-weight: 800;
+
+      line-height: 0.8;
+
+      letter-spacing: -6px;
+
+      color: rgba(255, 255, 255, 0.035);
+
+      pointer-events: none;
+
+      user-select: none;
+
+      z-index: -1;
+    }
+
+
+    /* =========================
+       DECORATIVE CIRCLE
+    ========================= */
+
+    .faculty-hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(
+        245,
+        197,
+        24,
+        0.12
+      );
+
+      right: -65px;
+      top: -75px;
+
+      z-index: -1;
+    }
+
+
+    .faculty-hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 80px;
+      height: 80px;
+
+      border-radius: 50%;
+
+      background: rgba(
+        245,
+        197,
+        24,
+        0.045
+      );
+
+      left: -30px;
+      bottom: 25px;
+
+      z-index: -1;
+    }
+
+
+    /* =========================
+       HERO CONTENT
+    ========================= */
+
+    .faculty-hero-content {
+      position: relative;
+
+      max-width: 750px;
+
+      margin: auto;
+
+      text-align: center;
+
+      z-index: 2;
+    }
+
+
+    /* =========================
+       EYEBROW
+    ========================= */
+
+    .faculty-eyebrow {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      padding: 6px 12px;
+
+      border: 1px solid rgba(
+        245,
+        197,
+        24,
+        0.35
+      );
+
+      border-radius: 999px;
+
+      background: rgba(
+        245,
+        197,
+        24,
+        0.08
+      );
+
+      color: #f5c518;
+
+      font-size: 0.62rem;
+
+      font-weight: 800;
+
+      letter-spacing: 1.2px;
+    }
+
+
+    .faculty-eyebrow::before {
+      content: "";
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+
+      background: #f5c518;
+
+      box-shadow:
+        0 0 9px rgba(
+          245,
+          197,
+          24,
+          0.8
+        );
+    }
+
+
+    /* =========================
+       MAIN HEADING
+    ========================= */
+
+    .faculty-hero h1 {
+      margin-top: 14px;
+
+      font-size: clamp(
+        2.5rem,
+        6vw,
+        4.5rem
+      );
+
+      line-height: 0.95;
+
+      letter-spacing: -2.5px;
+
+      font-weight: 800;
+
+      color: #ffffff;
+    }
+
+
+    .faculty-hero h1 span {
+      display: inline-block;
+
+      color: #f5c518;
+
+      position: relative;
+
+      margin-left: 7px;
+    }
+
+
+    /* =========================
+       YELLOW UNDERLINE
+    ========================= */
+
+    .faculty-hero h1 span::after {
+      content: "";
+
+      position: absolute;
+
+      left: 2px;
+      right: 2px;
+
+      bottom: -5px;
+
+      height: 2px;
+
+      border-radius: 999px;
+
+      background: #f5c518;
+
+      opacity: 0.65;
+    }
+
+
+    /* =========================
+       DESCRIPTION
+    ========================= */
+
+    .faculty-hero p {
+      max-width: 540px;
+
+      margin: 18px auto 0;
+
+      color: rgba(
+        255,
+        255,
+        255,
+        0.7
+      );
+
+      font-size: 0.85rem;
+
+      line-height: 1.6;
+    }
+
+
+    /* =========================
+       BOTTOM GUIDE
+    ========================= */
+
+    .faculty-hero-guide {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 9px;
+
+      margin-top: 22px;
+    }
+
+
+    .faculty-hero-guide span {
+      width: 30px;
+
+      height: 1px;
+
+      background: rgba(
+        255,
+        255,
+        255,
+        0.2
+      );
+    }
+
+
+    .faculty-hero-guide small {
+      color: rgba(
+        255,
+        255,
+        255,
+        0.45
+      );
+
+      font-size: 0.58rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.7px;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       FACULTY CONTENT
+    ========================= */
+
+    .faculty-content {
+      max-width: 1200px;
+
+      margin: auto;
+
+      padding: 45px 22px 70px;
+    }
+
+
+    .faculty-grid-heading {
+      margin-bottom: 22px;
+    }
+
+
+    .faculty-grid-heading h2 {
+      color: #063b26;
+
+      font-size: 1.35rem;
+
+      letter-spacing: -0.5px;
+    }
+
+
+    .faculty-grid-heading p {
+      color: #6d7a72;
+
+      font-size: 0.8rem;
+
+      margin-top: 3px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .faculty-hero {
+
+        padding: 38px 17px 35px;
+
+        margin: 12px 14px 0;
+
+        border-radius: 24px;
+      }
+
+
+      .faculty-hero h1 {
+
+        font-size: 2.65rem;
+
+        letter-spacing: -1.8px;
+
+        margin-top: 12px;
+      }
+
+
+      .faculty-hero h1 span {
+
+        margin-left: 5px;
+      }
+
+
+      .faculty-hero p {
+
+        font-size: 0.78rem;
+
+        max-width: 330px;
+
+        margin-top: 15px;
+      }
+
+
+      .faculty-hero-guide {
+
+        margin-top: 18px;
+      }
+
+
+      .faculty-hero-bg {
+
+        font-size: 5.5rem;
+
+        right: -15px;
+
+        bottom: -12px;
+
+        letter-spacing: -4px;
+      }
+
+
+      .faculty-content {
+
+        padding: 38px 17px 60px;
+      }
+
+
+      .faculty-grid-heading {
+
+        margin-bottom: 18px;
+      }
+
+
+      .faculty-grid-heading h2 {
+
+        font-size: 1.2rem;
+      }
+
+
+      .faculty-grid-heading p {
+
+        font-size: 0.75rem;
+      }
+
+    }
+
+  </style>
+
+
+<style id="uni-pilot-float-animations">
+/* Uni Pilot: smooth floating and scroll-reveal effects */
+@media (prefers-reduced-motion: no-preference) {
+  .up-reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .up-reveal.up-visible { opacity: 1; transform: translateY(0); }
+  .up-float { animation: upGentleFloat 5s ease-in-out infinite; }
+  .up-hover-float { transition: transform .28s ease, box-shadow .28s ease; }
+  .up-hover-float:hover { transform: translateY(-6px); }
+  @keyframes upGentleFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+}
+@media (prefers-reduced-motion: reduce) { .up-reveal { opacity: 1; transform: none; } }
+</style>
+
+  <link rel="stylesheet" href="site-navigation.css">
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+  <nav class="navbar">
+
+
+    <!-- BRAND -->
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+
+      <span class="brand-icon">
+        🎓
+      </span>
+
+      <span>
+        AAUA Uni Pilot
+      </span>
+
+    </a>
+
+
+    <!-- DESKTOP NAV -->
+
+    <div class="desktop-nav">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="resources.html">
+          Resources
+        </a>
+
+        <a href="guide.html">
+          Student Guide
+        </a>
+
+        <a href="updates.html">
+          Updates
+        </a>
+
+        <a href="tools.html">
+          Tools
+        </a>
+
+      </div>
+
+
+    <!-- NAV ACTIONS -->
+
+    <div class="nav-actions">
+
+
+      <button
+        class="icon-btn"
+        type="button"
+        aria-label="Search"
+      >
+        🔍
+      </button>
+
+
+      <!-- LOGIN -->
+
+      <a
+        href="auth.html"
+        class="auth-btn"
+        id="authBtn"
+      >
+        Login / Sign Up
+      </a>
+
+
+      <!-- ACCOUNT -->
+
+      <button
+        class="account-btn"
+        id="accountBtn"
+        type="button"
+        style="display: none;"
+      >
+
+        👤
+
+        <span id="accountName">
+          Account
+        </span>
+
+        ▾
+
+      </button>
+
+
+      <!-- MOBILE MENU -->
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open Menu"
+        type="button"
+      >
+        ☰
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <!-- MOBILE MENU -->
+
+  <div
+    class="mobile-menu"
+    id="navLinks"
+  >
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="resources.html">
+      Resources
+    </a>
+
+    <a href="guide.html">
+      Student Guide
+    </a>
+
+    <a href="updates.html">
+      Updates
+    </a>
+
+    <a href="tools.html">
+      Tools
+    </a>
+
+    <a
+      href="auth.html"
+      id="mobileAuthBtn"
+    >
+      Login / Sign Up
+    </a>
+
+  </div>
+
+</header>
+
+
+<!-- MENU OVERLAY -->
+
+<div
+  class="menu-overlay"
+  id="menuOverlay"
+></div>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
+
+
+  <!-- =========================
+       FACULTY HERO
+  ========================= -->
+
+  <section class="faculty-hero">
+
+
+    <div class="faculty-hero-bg">
+      FACULTY
+    </div>
+
+
+    <div class="faculty-hero-content">
+
+
+      <span class="faculty-eyebrow">
+        FACULTY GUIDE
+      </span>
+
+
+      <h1>
+
+        Find Your
+
+        <span>
+          Faculty.
+        </span>
+
+      </h1>
+
+
+      <p>
+        Explore your faculty, discover its departments,
+        and find the academic information you need.
+      </p>
+
+
+      <div class="faculty-hero-guide">
+
+        <span></span>
+
+        <small>
+          Choose your faculty below
+        </small>
+
+        <span></span>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FACULTY CARDS
+  ========================= -->
+
+  <section class="faculty-content">
+
+
+    <div class="faculty-grid-heading">
+
+      <h2>
+        Faculties
+      </h2>
+
+      <p>
+        Select your faculty to continue.
+      </p>
+
+    </div>
+
+
+    <div class="guide-grid">
+
+
+      <!-- =========================
+           AGRICULTURE
+      ========================= -->
+
+      <a
+        href="agriculture.html"
+        class="guide-card"
+      >
+
+        <span>
+          🌾
+        </span>
+
+        <div>
+
+          <h3>
+            Faculty of Agriculture
+          </h3>
+
+          <p>
+            Departments, courses and academic information.
+          </p>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- =========================
+           ALLIED HEALTH SCIENCES
+      ========================= -->
+
+      <a
+        href="allied-health-sciences.html"
+        class="guide-card"
+      >
+
+        <span>
+          🩺
+        </span>
+
+        <div>
+
+          <h3>
+            Faculty of Allied Health Sciences
+          </h3>
+
+          <p>
+            Departments, courses and academic information.
+          </p>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- =========================
+           ARTS
+      ========================= -->
+
+      <a
+        href="arts.html"
+        class="guide-card"
+      >
+
+        <span>
+          📚
+        </span>
+
+        <div>
+
+          <h3>
+            Faculty of Arts
+          </h3>
+
+          <p>
+            Departments, courses and academic information.
+          </p>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- =========================
+           COMPUTING
+      ========================= -->
+
+      <a
+        href="computing.html"
+        class="guide-card"
+      >
+
+        <span>
+          💻
+        </span>
+
+        <div>
+
+          <h3>
+            Faculty of Computing
+          </h3>
+
+          <p>
+            Departments, courses and academic information.
+          </p>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- =========================
+           EDUCATION
+      ========================= -->
+
+      <a
+        href="education.html"
+        class="guide-card"
+      >
+
+        <span>
+          🎓
+        </span>
+
+        <div>
+
+          <h3>
+            Faculty of Education
+          </h3>
+
+          <p>
+            Departments, courses and academic information.
+          </p>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- =========================
+           ENVIRONMENTAL DESIGN
+      ========================= -->
+
+      <a
+        href="environmental-design-and-management.html"
+        class="guide-card"
+      >
+
+        <span>
+          🏛️
+        </span>
+
+        <div>
+
+          <h3>
+            Faculty of Environmental Design and Management
+          </h3>
+
+          <p>
+            Departments, courses and academic information.
+          </p>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- =========================
+           LAW
+      ========================= -->
+
+      <a
+        href="law.html"
+        class="guide-card"
+      >
+
+        <span>
+          ⚖️
+        </span>
+
+        <div>
+
+          <h3>
+            Faculty of Law
+          </h3>
+
+          <p>
+            Departments, courses and academic information.
+          </p>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- =========================
+           SCIENCE
+      ========================= -->
+
+      <a
+        href="science.html"
+        class="guide-card"
+      >
+
+        <span>
+          🔬
+        </span>
+
+        <div>
+
+          <h3>
+            Faculty of Science
+          </h3>
+
+          <p>
+            Departments, courses and academic information.
+          </p>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- =========================
+           SOCIAL SCIENCES
+      ========================= -->
+
+      <a
+        href="social-sciences.html"
+        class="guide-card"
+      >
+
+        <span>
+          🌍
+        </span>
+
+        <div>
+
+          <h3>
+            Faculty of Social Sciences
+          </h3>
+
+          <p>
+            Departments, courses and academic information.
+          </p>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- =========================
+           ADMINISTRATION & MANAGEMENT
+      ========================= -->
+
+      <a
+        href="administration-and-management-sciences.html"
+        class="guide-card"
+      >
+
+        <span>
+          📊
+        </span>
+
+        <div>
+
+          <h3>
+            Faculty of Administration and Management Sciences
+          </h3>
+
+          <p>
+            Departments, courses and academic information.
+          </p>
+
+        </div>
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+      <div class="footer-brand">
+
+        <a
+          href="index.html"
+          class="brand"
+        >
+
+          <span class="brand-icon">
+            🎓
+          </span>
+
+          <span>
+            Uni Pilot
+          </span>
+
+        </a>
+
+        <p>
+          Your campus. Your resources. Your guide.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <div class="footer-column">
+
+          <h4>
+            Platform
+          </h4>
+
+          <a href="resources.html">
+            Resources
+          </a>
+
+          <a href="guide.html">
+            Student Guide
+          </a>
+
+          <a href="updates.html">
+            Updates
+          </a>
+
+          <a href="tools.html">
+            Student Tools
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Information
+          </h4>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="privacy.html">
+            Privacy Policy
+          </a>
+
+          <a href="terms.html">
+            Terms of Use
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 Uni Pilot. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+
+<!-- =========================
+     ACCOUNT SCRIPT
+========================= -->
+
+<script>
+
+  const authBtn =
+    document.getElementById("authBtn");
+
+  const accountBtn =
+    document.getElementById("accountBtn");
+
+  const accountName =
+    document.getElementById("accountName");
+
+  const mobileAuthBtn =
+    document.getElementById("mobileAuthBtn");
+
+
+  const loggedIn =
+    localStorage.getItem(
+      "uniPilotLoggedIn"
+    );
+
+
+  const currentUser =
+    JSON.parse(
+      localStorage.getItem(
+        "uniPilotCurrentUser"
+      )
+    );
+
+
+  if (
+    loggedIn === "true" &&
+    currentUser
+  ) {
+
+    authBtn.style.display =
+      "none";
+
+    accountBtn.style.display =
+      "block";
+
+    accountName.textContent =
+      currentUser.name ||
+      "Account";
+
+    mobileAuthBtn.textContent =
+      "👤 " +
+      (
+        currentUser.name ||
+        "Account"
+      );
+
+    mobileAuthBtn.href =
+      "#";
+
+  }
+
+
+  accountBtn.addEventListener(
+    "click",
+    function () {
+
+      window.location.href =
+        "index.html";
+
+    }
+  );
+
+</script>
+
+
+<script src="script.js"></script>
+
+
+
+<script id="uni-pilot-float-script">
+(() => {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealSelectors = 'main > section, main > article, .faculty-hero-content, .section-heading, .platform-intro, .tools-section, .resource-card, .tool-card, .update-card, .browse-all-card, .faculty-card, .department-card, .quick-info-card, .program-card, .contact-card';
+  const candidates = [...document.querySelectorAll(revealSelectors)];
+  const seen = new Set();
+  candidates.forEach((el, i) => {
+    if (seen.has(el) || el.closest('footer, nav, .desktop-nav, .mobile-nav, .theme-modal')) return;
+    seen.add(el);
+    el.classList.add('up-reveal');
+    if (el.matches('.resource-card, .tool-card, .update-card, .browse-all-card, .faculty-card, .department-card, .quick-info-card, .program-card, .contact-card')) el.classList.add('up-hover-float');
+    if (el.matches('.faculty-hero-content, .platform-intro')) el.classList.add('up-float');
+    el.style.transitionDelay = `${Math.min(i % 5, 4) * 70}ms`;
+  });
+  if (reduced || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.up-reveal').forEach(el => el.classList.add('up-visible'));
+    return;
+  }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('up-visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+  document.querySelectorAll('.up-reveal').forEach(el => observer.observe(el));
+})();
+</script>
+
+  <script src="site-navigation.js"></script>
+</body>
+
+</html>
