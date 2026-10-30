@@ -172,6 +172,15 @@ button,input{font-family:inherit}
 .summary-stat strong{color:var(--green)}
 
 /* RESOURCES */
+/* ACADEMIC RESOURCES: match the ICT student-support cards */
+.academic-resource-grid{grid-template-columns:1fr;gap:18px}
+.academic-resource-card{padding:28px}
+.academic-resource-card .resource-icon{width:66px;height:66px;margin-bottom:20px;border-radius:17px;font-size:25px}
+.academic-resource-card h3{margin:0 0 14px;font-size:1.02rem}
+.academic-resource-card p{font-size:.84rem;line-height:1.8}
+.academic-resource-card .resource-actions{margin-top:18px;gap:10px}
+.academic-resource-card .upload-status{margin-top:4px}
+.academic-resource-card .whatsapp-button{min-height:48px;padding:0 18px;border-radius:13px}
 .resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .resource-card{display:block;padding:24px;transition:.2s ease}
 .resource-icon{width:48px;height:48px;font-size:21px}
@@ -462,10 +471,26 @@ footer{border-top:1px solid var(--border)}
 
   <section class="department-section" id="resources">
     <div class="section-heading"><span>Student Support</span><h2>Academic Resources</h2></div>
-    <div class="resource-grid">
-      <div class="resource-card"><div class="resource-icon">📖</div><h3>Department Guide</h3><p>Review the programme background, admission requirements, registration rules and full course structure on this page.</p></div>
-      <div class="resource-card"><div class="resource-icon">🧾</div><h3>Check the Current Handbook</h3><p>The transcript covers only the supplied pages. Use the current approved handbook or consult the department before relying on uncertain course codes, requirements or totals.</p></div>
-      <div class="resource-card"><div class="resource-icon">🛡️</div><h3>Responsible Security Practice</h3><p>Practise only in authorised labs and environments, document your work, and follow ethical and legal requirements.</p></div>
+    <div class="resource-grid academic-resource-grid">
+      <article class="resource-card academic-resource-card">
+        <div class="resource-icon">📖</div><h3>Department Guide</h3>
+        <p>Use this page to review the programme background, admission requirements, graduation requirements and academic structure.</p>
+      </article>
+      <article class="resource-card academic-resource-card">
+        <div class="resource-icon">📄</div><h3>Lecture Notes PDF</h3>
+        <p>Download the department document or select a PDF/course note from your device.</p>
+        <div class="resource-actions">
+          <a class="download-button" href="#resources" id="cyberDepartmentDownload">↓ Download</a>
+          <label class="upload-button" for="cyberPdfUpload">↑ Upload PDF</label>
+          <input class="file-input" id="cyberPdfUpload" type="file" accept="application/pdf,.pdf">
+        </div>
+        <p class="upload-status" id="cyberPdfStatus" aria-live="polite">No PDF selected.</p>
+      </article>
+      <article class="resource-card academic-resource-card">
+        <div class="resource-icon">💬</div><h3>Connect on WhatsApp</h3>
+        <p>Use the department/student support WhatsApp channel when the official link is available.</p>
+        <div class="resource-actions"><a class="whatsapp-button" href="#" id="cyberWhatsAppLink" aria-label="Join WhatsApp group">💬 Join WhatsApp Group ↗</a></div>
+      </article>
     </div>
   </section>
 
@@ -597,6 +622,29 @@ document.querySelectorAll(".level-nav .course-level-button[data-level]").forEach
   })();
 </script>
 
+  <script>
+  (function () {
+    const input = document.getElementById("cyberPdfUpload");
+    const status = document.getElementById("cyberPdfStatus");
+    const download = document.getElementById("cyberDepartmentDownload");
+    const whatsapp = document.getElementById("cyberWhatsAppLink");
+    if (input && status) {
+      input.addEventListener("change", function () {
+        const file = this.files && this.files[0];
+        if (!file) { status.textContent = "No PDF selected."; return; }
+        if (file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) {
+          this.value = ""; status.textContent = "Please select a PDF file."; return;
+        }
+        status.textContent = "Selected: " + file.name;
+      });
+    }
+    if (download) download.addEventListener("click", function (event) {
+      event.preventDefault();
+      if (status) status.textContent = "The department PDF has not been added to the site yet. You can select a PDF using Upload PDF.";
+    });
+    if (whatsapp) whatsapp.addEventListener("click", function (event) { event.preventDefault(); });
+  })();
+  </script>
   <script src="site-navigation.js"></script>
 </body>
 </html>
