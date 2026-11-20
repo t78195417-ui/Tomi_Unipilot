@@ -460,27 +460,21 @@ footer{border-top:1px solid var(--border)}
     <div class="resource-card">
       <div class="resource-icon">📖</div>
       <h3>Department Guide</h3>
-      <p>Use this page to review the programme background, admission requirements, graduation requirements and academic structure.</p>
+      <p>Use this Software Engineering guide to review the programme objectives, admission and graduation requirements, course structure, industrial training and departmental information.</p>
     </div>
 
     <div class="resource-card">
       <div class="resource-icon">📄</div>
-      <h3>Lecture Notes PDF</h3>
-      <p>Download the department document or select a PDF/course note from your device.</p>
-      <div class="resource-actions">
-        <a class="download-button" href="DOC-20260920-WA0045.pdf" download>⬇ Download</a>
-        <label class="upload-button" for="ictPdfUpload">⬆ Upload PDF</label>
-        <input id="ictPdfUpload" class="file-input" type="file" accept="application/pdf,.pdf">
-      </div>
-      <p id="uploadStatus" class="upload-status">No PDF selected.</p>
+      <h3>Software Engineering Course Materials</h3>
+      <p>Course codes, titles, unit values and semester details are available in the course structure section. No separate Software Engineering lecture-notes PDF is currently attached to this page.</p>
     </div>
 
     <div class="resource-card">
       <div class="resource-icon">💬</div>
-      <h3>Connect on WhatsApp</h3>
-      <p>Use the department/student support WhatsApp channel when the official link is available.</p>
+      <h3>Department Support</h3>
+      <p>For questions about Software Engineering course registration, programme requirements or departmental information, use the AAUA Uni Pilot student help system.</p>
       <div class="resource-actions">
-        <a class="whatsapp-button" href="https://chat.whatsapp.com/H1mmIscMgXeHTxxnC6ej8l" target="_blank" rel="noopener noreferrer" aria-label="Join the ICT WhatsApp group">💬 Join WhatsApp Group ↗</a>
+        <a class="whatsapp-button" href="help.html" aria-label="Open AAUA Uni Pilot student help">💬 Open Student Help ↗</a>
       </div>
     </div>
   </div>
@@ -495,8 +489,8 @@ footer{border-top:1px solid var(--border)}
     <div class="contact-card">
       <h3>Department Information</h3>
       <div class="contact-item"><div class="contact-item-icon">🏛️</div><div><span>Faculty</span><strong>Faculty of Computing</strong></div></div>
-      <div class="contact-item"><div class="contact-item-icon">🎓</div><div><span>Department</span><strong>Information and Communication Technology</strong></div></div>
-      <div class="contact-item"><div class="contact-item-icon">👨‍🏫</div><div><span>HOD</span><strong>Dr. A. O. Akingbesote</strong></div></div>
+      <div class="contact-item"><div class="contact-item-icon">🎓</div><div><span>Department</span><strong>Software Engineering</strong></div></div>
+      <div class="contact-item"><div class="contact-item-icon">👨‍🏫</div><div><span>HOD</span><strong>Dr. Mrs. E.O. Aliyu</strong></div></div>
     </div>
     <div class="contact-card">
       <h3>University</h3>
@@ -588,29 +582,7 @@ document.querySelectorAll(".level-nav .course-level-button[data-level]").forEach
 </script>
 
 <script>
-document.getElementById("ictPdfUpload").addEventListener("change", function(){
-  const status = document.getElementById("uploadStatus");
-  const file = this.files[0];
 
-  if(!file){
-    status.textContent = "No PDF selected.";
-    return;
-  }
-
-  const isPdf = file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf");
-
-  if(!isPdf){
-    this.value = "";
-    status.textContent = "Please select a PDF file.";
-    return;
-  }
-
-  status.textContent = "Selected: " + file.name + " (ready for upload)";
-});
-</script>
-
-
-<script>
   // Return to the referring page when possible; use the faculty guide as a safe fallback.
   document.getElementById("departmentBackButton").addEventListener("click", function () {
     if (window.history.length > 1 && document.referrer && new URL(document.referrer).origin === window.location.origin) {
