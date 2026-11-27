@@ -21,6 +21,33 @@
     let btn=header.querySelector("#menuBtn")||document.querySelector("#menuBtn");
     if(btn&&!btn.dataset.siteBound){btn.dataset.siteBound="1";btn.addEventListener("click",()=>{const open=!menu.classList.contains("is-open");menu.classList.toggle("is-open",open);menu.style.right=open?"14px":"";menu.style.left="auto";menu.style.transform="none";menu.style.visibility="visible";menu.style.opacity=open?"1":"";overlay.classList.toggle("is-open",open);btn.setAttribute("aria-expanded",String(open));btn.setAttribute("aria-label",open?"Close menu":"Open menu");btn.textContent=open?"×":"☰";});}
     if(!overlay.dataset.siteBound){overlay.dataset.siteBound="1";overlay.addEventListener("click",()=>{menu.classList.remove("is-open");menu.style.right="";menu.style.transform="";menu.style.opacity="";overlay.classList.remove("is-open");if(btn){btn.setAttribute("aria-expanded","false");btn.setAttribute("aria-label","Open menu");btn.textContent="☰";}});}
+    // Move department breadcrumb navigation into the hamburger menu on opted-in department pages.
+    const pageBreadcrumb=document.querySelector("[data-menu-breadcrumb]");
+    if(pageBreadcrumb && !menu.querySelector(".menu-breadcrumb-group")){
+      const group=document.createElement("div");
+      group.className="menu-breadcrumb-group";
+      const heading=document.createElement("div");
+      heading.className="menu-breadcrumb-heading";
+      heading.textContent="PAGE NAVIGATION";
+      group.appendChild(heading);
+      pageBreadcrumb.querySelectorAll("a").forEach(source=>{
+        const a=document.createElement("a");
+        a.href=source.href;
+        a.textContent=source.textContent.trim();
+        a.className="menu-breadcrumb-link";
+        group.appendChild(a);
+      });
+      const current=pageBreadcrumb.lastElementChild;
+      if(current && current.tagName!=="A" && current.textContent.trim()){
+        const a=document.createElement("a");
+        a.href=location.pathname.split("/").pop() || location.href;
+        a.textContent=current.textContent.trim();
+        a.className="menu-breadcrumb-link current";
+        group.appendChild(a);
+      }
+      menu.appendChild(group);
+      pageBreadcrumb.remove();
+    }
     // Put a working theme control on both desktop and mobile.
     let themeBtn=header.querySelector("[data-open-site-theme]");
     if(!themeBtn){themeBtn=document.createElement("button");themeBtn.type="button";themeBtn.className="site-theme-btn";themeBtn.dataset.openSiteTheme="";themeBtn.textContent="◐ Theme";header.querySelector(".nav-actions")?.appendChild(themeBtn);}
